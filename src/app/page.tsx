@@ -42,7 +42,8 @@ export default async function Home() {
           </span>
           <nav className="hidden gap-6 text-sm text-muted sm:flex">
             <a href="#como" className="hover:text-ink">Cómo trabajo</a>
-            <a href="#clientes" className="hover:text-ink">Clientes</a>
+            <a href="#clientes" className="hover:text-ink">Entregas</a>
+            <a href="#contenido" className="hover:text-ink">Videos</a>
             <a href="#preguntas" className="hover:text-ink">Preguntas</a>
           </nav>
           <a href={wa} className="btn-primary !py-1.5 !px-3 text-xs sm:text-sm">
@@ -121,16 +122,30 @@ export default async function Home() {
         </ol>
       </section>
 
-      {/* Testimonios */}
+      {/* Entregas (fotos) */}
       <section id="clientes" className="border-y border-line bg-surface">
         <div className="mx-auto max-w-5xl px-4 py-16">
-          <h2 className="serif text-2xl font-semibold sm:text-3xl">Clientes y entregas</h2>
-          <p className="mt-2 text-muted">Gente real, autos reales, operaciones cerradas.</p>
+          <h2 className="serif text-2xl font-semibold sm:text-3xl">{s.entregas_titulo}</h2>
+          <p className="mt-2 max-w-2xl text-muted">{s.entregas_texto}</p>
           <div className="mt-8">
-            <Testimonials items={testimonials} />
+            <Testimonials items={testimonials.filter((t) => t.kind === "foto")} />
           </div>
+          {s.entregas_cierre && (
+            <p className="mt-8 text-center text-lg text-muted serif italic">{s.entregas_cierre}</p>
+          )}
         </div>
       </section>
+
+      {/* Videos / contenido */}
+      {testimonials.some((t) => t.kind === "video") && (
+        <section id="contenido" className="mx-auto max-w-5xl px-4 py-16">
+          <h2 className="serif text-2xl font-semibold sm:text-3xl">{s.videos_titulo}</h2>
+          <p className="mt-2 max-w-2xl text-muted">{s.videos_texto}</p>
+          <div className="mt-8">
+            <Testimonials items={testimonials.filter((t) => t.kind === "video")} />
+          </div>
+        </section>
+      )}
 
       {/* Preguntas */}
       <section id="preguntas" className="mx-auto max-w-3xl px-4 py-16">

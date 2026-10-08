@@ -22,8 +22,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
     <div className="space-y-10">
       {videos.length > 0 && (
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted">Videos</h3>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
+                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 md:grid-cols-4">
             {videos.map((t) => (
               <button
                 key={t.id}
@@ -54,8 +53,7 @@ export function Testimonials({ items }: { items: Testimonial[] }) {
 
       {fotos.length > 0 && (
         <div>
-          <h3 className="mb-4 text-sm font-semibold uppercase tracking-wide text-muted">Entregas</h3>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
+                    <div className="grid grid-cols-2 gap-3 sm:grid-cols-3">
             {fotos.map((t) => (
               <figure key={t.id} className="overflow-hidden rounded-xl bg-line">
                 <button onClick={() => setOpen(t)} className="block w-full">

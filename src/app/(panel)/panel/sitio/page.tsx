@@ -20,6 +20,11 @@ const FIELDS: { key: string; label: string; multi?: boolean; hint?: string }[] =
   { key: "paso_3_texto", label: "Paso 3 · texto", multi: true },
   { key: "paso_4_titulo", label: "Paso 4 · título" },
   { key: "paso_4_texto", label: "Paso 4 · texto", multi: true },
+  { key: "entregas_titulo", label: "Sección entregas · título" },
+  { key: "entregas_texto", label: "Sección entregas · texto", multi: true },
+  { key: "entregas_cierre", label: "Sección entregas · frase de cierre (debajo de las fotos)" },
+  { key: "videos_titulo", label: "Sección videos · título" },
+  { key: "videos_texto", label: "Sección videos · texto", multi: true },
   { key: "cta_texto", label: "Frase final (llamado a escribirte)" },
 ];
 
